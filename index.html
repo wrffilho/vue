@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World - Vue.js 2</title>
+    <script src="lib/vue/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-on:input="changeTitle" name="">
+		<p>{{message}}</p>
+		<br/><hr/><br/>
+		<ul>
+			<li v-for="(item, index) in linguagens">{{index+1 }} - {{item.nome}}</li>
+		</ul>
+		<label>Nome</label>
+		<input type="text" name=""><br>
+		<label>Telefone</label>
+		<input type="text" name=""><br>
+		
+	</div>
+	<script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello World!",
+                linguagens: [
+            	{ nome: "JavaScript" },
+            	{ nome:"Java" },
+            	{ nome: "C" },
+            	{ nome: "C++" },
+            	{ nome: "Natural" },
+            ]},
+
+            methods: {
+            	changeTitle: function(eveent){
+            		this.message = eveent.target.value;
+            	}
+            }
+        });
+    </script>
+</body>
+</html>
